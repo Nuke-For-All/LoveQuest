@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: e90716a99df180144acaff8c9fff068b
+timeCreated: 1496274090
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CustomSpritesSet_0
+    21300002: CustomSpritesSet_1
+    21300004: CustomSpritesSet_2
+    21300006: CustomSpritesSet_3
+    21300008: CustomSpritesSet_4
+    21300010: CustomSpritesSet_5
+    21300012: CustomSpritesSet_6
+    21300014: CustomSpritesSet_7
+    21300016: CustomSpritesSet_8
+    21300018: CustomSpritesSet_9
+    21300020: CustomSpritesSet_10
+    21300022: CustomSpritesSet_11
+    21300024: CustomSpritesSet_12
+    21300026: CustomSpritesSet_13
+    21300028: CustomSpritesSet_14
+    21300030: CustomSpritesSet_15
+    21300032: CustomSpritesSet_16
+    21300034: CustomSpritesSet_17
+    21300036: CustomSpritesSet_18
+    21300038: CustomSpritesSet_19
+    21300040: CustomSpritesSet_20
+    21300042: CustomSpritesSet_21
+    21300044: CustomSpritesSet_22
+    21300046: CustomSpritesSet_23
+    21300048: CustomSpritesSet_24
+    21300050: CustomSpritesSet_25
+    21300052: CustomSpritesSet_26
+    21300054: CustomSpritesSet_27
+    21300056: CustomSpritesSet_28
+    21300058: CustomSpritesSet_29
+    21300060: CustomSpritesSet_30
+    21300062: CustomSpritesSet_31
+    21300064: CustomSpritesSet_32
+    21300066: CustomSpritesSet_33
+    21300068: CustomSpritesSet_34
+    21300070: CustomSpritesSet_35
+    21300072: CustomSpritesSet_36
+    21300074: CustomSpritesSet_37
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CustomSpritesSet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 675
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 676
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 678
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_3
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 679
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_4
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 685
+        width: 100
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_5
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 682
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 560
+        width: 99
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_7
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 557
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_8
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 560
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_9
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 562
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_10
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 550
+        width: 50
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_11
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 557
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 449
+        width: 96
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 449
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_14
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 452
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_15
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 454
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_16
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 436
+        width: 97
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_17
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 428
+        width: 100
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_18
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 332
+        width: 99
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_19
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 335
+        width: 99
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_20
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 338
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_21
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 347
+        width: 86
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_22
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 306
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_23
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 302
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 217
+        width: 97
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 219
+        width: 97
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_26
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 222
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_27
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 231
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_28
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 179
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_29
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 178
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_30
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 84
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_31
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 130
+        width: 100
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_32
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 182
+        width: 99
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_33
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 34
+        width: 99
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_34
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 52
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_35
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 55
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_36
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 55
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CustomSpritesSet_37
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 54
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
