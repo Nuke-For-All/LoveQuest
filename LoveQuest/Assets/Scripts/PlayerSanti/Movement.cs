@@ -5,17 +5,19 @@ using UnityEngine;
 public class Movement : CustomBehavior {
 
     private float direction;
+    private float force = 1.5f;
 
-	public Movement(Transform t, Rigidbody2D _rb)
+	public Movement(Transform p, Rigidbody2D _rb, TouchingData t)
     {
-        parent = t;
+        parent = p;
         rb = _rb;
+        touching = t;
     }
 
     override public void Execute()
     {
         direction = Input.GetAxis("Horizontal");
 
-        rb.AddForce(new Vector2(direction, 0), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(direction, 0) * force, ForceMode2D.Impulse);
     }
 }

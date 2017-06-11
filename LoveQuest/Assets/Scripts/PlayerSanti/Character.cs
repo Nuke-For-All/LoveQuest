@@ -6,43 +6,50 @@ public class Character : MonoBehaviour {
 
     public delegate void NotifyTouching();
 
-    static public event NotifyTouching onFloor;
     static public event NotifyTouching onAir;
-    static public event NotifyTouching onWallGrab;
+    static public event NotifyTouching onFloor;
+    static public event NotifyTouching onLeft;
+    static public event NotifyTouching onRight;
+    static public event NotifyTouching onCeiling;
 
     public delegate void NotifyAction();
 
     static public event NotifyAction onJump;
+    static public event NotifyAction onWallGrabbed;
 
-	Jump jump;
-	WallJump walljump;
-    Movement movement;
-    WallGrab wallgrab;
-
+    //distancia para raycast de touching
     private float horizontalDetectionDist;
     private float verticalDetectionDist;
 
-    /// <summary>
-    /// direccion que esta tocando
-    /// </summary>
-    private Vector2 touching;
+    private float gravity;
+
+    //direccion que esta tocando
+    private TouchingData touching;
+
+    Jump jump;
+    WallGrab wallgrab;
+    WallJump walljump;
+    Movement movement;
 
 	Rigidbody2D rb;
     BoxCollider2D bc;
 
     void Awake()
 	{
-
 		rb = GetComponent<Rigidbody2D> ();
         bc = GetComponent<BoxCollider2D>();
 
-        jump = new Jump (transform, rb);
-		walljump = new WallJump (transform, rb);
-        movement = new Movement(transform, rb);
-        wallgrab = new WallGrab(transform, rb);
+        touching = new TouchingData();
+
+        gravity = rb.gravityScale;
+
+        jump = new Jump(transform, rb, touching);
+        wallgrab = new WallGrab(transform, rb, touching, rb.gravityScale);
+        walljump = new WallJump(transform, rb, touching);
+        movement = new Movement(transform, rb, touching);
 
         //Se le suma 0.1 para que el rayo salga de la box lo minimo posible
-        horizontalDetectionDist = bc.size.x * (transform.lossyScale.x / 2) + 0.1f; 
+        horizontalDetectionDist = bc.size.x * (transform.lossyScale.x / 2) + 0.1f;
         verticalDetectionDist = bc.size.y * (transform.lossyScale.y / 2) + 0.1f;
 	}
 	
@@ -51,13 +58,16 @@ public class Character : MonoBehaviour {
 
 		Controls ();
         
+        CheckOnCeiling();
+        CheckOnLeft();
+        CheckOnRight();
         CheckOnAir();
         CheckOnFloor();
-        CheckOnWallGrab();
-        CheckOnJump();
 
-        wallgrab.SetDirection(touching);
-        walljump.SetDirection(touching);
+        ManageGravity();
+
+        CheckOnWallGrabbed();
+        CheckOnJump();
 	}
 
 	private void Controls()
@@ -68,13 +78,31 @@ public class Character : MonoBehaviour {
             walljump.Execute();
 		}
 
-        if(Input.GetButton("Horizontal"))
-        {
-            movement.Execute();
-            wallgrab.Execute();
-        }
+        movement.Execute();
+        
 	}
 
+    private void ManageGravity()
+    {
+        if(IsTouching(Vector2.down))
+        {
+            rb.gravityScale = gravity / 2;
+        }
+        else
+        {
+            rb.gravityScale = gravity;
+        }
+    }
+
+    private bool IsOnAir()
+    {
+        if (!IsTouching(Vector2.up) && !IsTouching(Vector2.down) && !IsTouching(Vector2.right) && !IsTouching(Vector2.left))
+        {
+            return true;
+        }
+
+        return false;
+    }
 
     /// <summary>
     /// Para saber si esta tocando la direccion que se le envia
@@ -101,7 +129,6 @@ public class Character : MonoBehaviour {
 
             if (firstRay.collider != null || secondRay.collider != null)
             {
-                touching = Vector2.down;
                 return true;
             }
         }
@@ -119,7 +146,6 @@ public class Character : MonoBehaviour {
 
             if (firstRay.collider != null || secondRay.collider != null)
             {
-                touching = Vector2.left;
                 return true;
             }
         }
@@ -137,7 +163,6 @@ public class Character : MonoBehaviour {
 
             if (firstRay.collider != null || secondRay.collider != null)
             {
-                touching = Vector2.right;
                 return true;
             }
         }
@@ -155,7 +180,6 @@ public class Character : MonoBehaviour {
 
             if (firstRay.collider != null || secondRay.collider != null)
             {
-                touching = Vector2.up;
                 return true;
             }
         }
@@ -178,7 +202,7 @@ public class Character : MonoBehaviour {
 
     private void CheckOnAir()
     {
-        if(!IsTouching(Vector2.up) && !IsTouching(Vector2.down) && !IsTouching(Vector2.right) && !IsTouching(Vector2.left))
+        if(IsOnAir())
         {
             if(onAir != null)
             {
@@ -187,13 +211,35 @@ public class Character : MonoBehaviour {
         }
     }
 
-    private void CheckOnWallGrab()
+    private void CheckOnLeft()
     {
-        if(wallgrab.IsGrabbed())
+        if(IsTouching(Vector2.left))
         {
-            if(onWallGrab != null)
+            if(onLeft != null)
             {
-                onWallGrab();
+                onLeft();
+            }
+        }
+    }
+
+    private void CheckOnRight()
+    {
+        if (IsTouching(Vector2.right))
+        {
+            if (onRight != null)
+            {
+                onRight();
+            }
+        }
+    }
+
+    private void CheckOnCeiling()
+    {
+        if(IsTouching(Vector2.up))
+        {
+            if(onCeiling != null)
+            {
+                onCeiling();
             }
         }
     }
@@ -209,5 +255,37 @@ public class Character : MonoBehaviour {
         }
     }
 
+    private void CheckOnWallGrabbed()
+    {
+        if(wallgrab != null && wallgrab.IsGrabbed())
+        {
+            if(onWallGrabbed != null)
+            {
+                onWallGrabbed();
+            }
+        }
+    }
 
+
+    //Probando cosas
+
+
+    /*
+    protected void AddBehavior(CustomBehavior b)
+    {
+        behaviors.Add(b);
+    }
+
+    protected T GetBehavior<T>() where T : CustomBehavior
+    {
+        foreach(CustomBehavior cb in behaviors)
+        {
+            if(cb is T)
+            {
+                return cb as T;
+            }
+        }
+
+        return null;
+    }*/
 }

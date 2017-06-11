@@ -11,26 +11,31 @@ public class Jump : CustomBehavior{
 
     private float force;
     private bool onJump = false;
-    private bool canJump = false;
     private float direction = 1;
 
     private const float startOverTimer = 0.2f;
     private float overTimer = startOverTimer;
 
-	public Jump(Transform p, Rigidbody2D r)
+	public Jump(Transform p, Rigidbody2D r, TouchingData t)
 	{
 		parent = p;
 		rb = r;
+        touching = t;
+
+        Character.onAir += Lock;
+        Character.onCeiling += Lock;
+        Character.onJump += Lock;
+        Character.onCeiling += Reset;
 
         Character.onFloor += Unlock;
-        Character.onAir += Lock;
-        Character.onWallGrab += Unlock;
+        Character.onWallGrabbed += Unlock;
+        
         Character.onJump += Update;
 	}
 
 	override public void Execute()
 	{
-        if(canJump)
+        if(active)
         {
             if (!onJump)
             {
@@ -75,19 +80,8 @@ public class Jump : CustomBehavior{
 
     private void Reset()
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0);
         onJump = false;
         overTimer = startOverTimer;
-    }
-
-    private void Lock()
-    {
-        canJump = false;
-    }
-
-    private void Unlock()
-    {
-       canJump = true;
     }
 
     public bool IsOnJump()
