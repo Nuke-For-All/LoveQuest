@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Portal:PortalEntity { 
+public class Portal : PortalEntity { 
 
     [Header ("Causes the movement to begin inversely")]
     public bool moveNegativeDirectionFirst = false;
@@ -16,36 +16,53 @@ public class Portal:PortalEntity {
 
     private float direction = 1f;
     private bool canMove = false;
-    PortalBehaviours portalBehaviours;
 
-    Portal()
+    void Awake()
     {
-        portalBehaviours = new PortalBehaviours();
-        if (moveNegativeDirectionFirst)
-            direction *=-1;
-	}
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Start()
     {
+        if (moveNegativeDirectionFirst)
+            direction *= -1;
         initialPosition = rb.position;
     }
+
+    void Update()
+    {
+        CheckAbsorb();
+    }
+
     void FixedUpdate () {
-        portalBehaviours.RotationMove(rb,rotationSpeed);
+
+        pb.RotationMove(rb, rotationSpeed);
+
         if (isHorizontalMovement)
         {
             canMove = true;
-            portalBehaviours.HorizontalMovement(direction,horizontalDistance);
+            pb.HorizontalMovement(direction,horizontalDistance);
         }
         if (isVerticalMovement)
         {
             canMove = true;
-            portalBehaviours.VerticalMovement(direction,verticalDistance);
+            pb.VerticalMovement(direction, verticalDistance);
         }
         if (canMove)
         {
-            portalBehaviours.Movement(rb,initialPosition);
+            pb.Movement(rb, initialPosition);
         }
+
+        active = !active;
 	}
 
-
-
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (active && obj.tag == "Player")
+        {
+            Debug.Log("hola");
+            absorb = true;
+        }
+    }
+    
 }

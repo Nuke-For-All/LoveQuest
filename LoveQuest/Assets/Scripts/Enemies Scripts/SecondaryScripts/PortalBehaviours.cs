@@ -11,7 +11,10 @@ public class PortalBehaviours  {
 
     public void RotationMove(Rigidbody2D rb,float rotationSpeed)
     {
-        rb.MoveRotation(rb.rotation + rotationSpeed);
+        if(rb != null)
+        {
+            rb.MoveRotation(rb.rotation + rotationSpeed);
+        }
     }
     public void VerticalMovement(float direction,float verticalDistance)
     {

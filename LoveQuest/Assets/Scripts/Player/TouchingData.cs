@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//PRIVATE CLASS DATA
 public class TouchingData {
 
     private Vector2 touching = Vector2.zero;

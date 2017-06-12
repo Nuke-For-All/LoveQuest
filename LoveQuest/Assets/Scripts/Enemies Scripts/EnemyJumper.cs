@@ -32,6 +32,6 @@ public class EnemyJumper : EnemyEntity {
     }
     void CheckRay()
     {
-            enemyWalk.PhysicsRayCheckFloor(transform);
+        enemyWalk.PhysicsRayCheckFloor(transform);
     }
 }

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour
+{
+
+    #region DELEGATES
 
     public delegate void NotifyTouching();
 
@@ -17,6 +20,8 @@ public class Character : MonoBehaviour {
     static public event NotifyAction onJump;
     static public event NotifyAction onWallGrabbed;
 
+    #endregion
+
     //distancia para raycast de touching
     private float horizontalDetectionDist;
     private float verticalDetectionDist;
@@ -26,10 +31,13 @@ public class Character : MonoBehaviour {
     //direccion que esta tocando
     private TouchingData touching;
 
+    //Behaviors
+
     Jump jump;
     WallGrab wallgrab;
     WallJump walljump;
     Movement movement;
+    AbsorbedBehaviour absorbed;
 
 	Rigidbody2D rb;
     BoxCollider2D bc;
@@ -47,6 +55,7 @@ public class Character : MonoBehaviour {
         wallgrab = new WallGrab(transform, rb, touching, rb.gravityScale);
         walljump = new WallJump(transform, rb, touching);
         movement = new Movement(transform, rb, touching);
+        absorbed = new AbsorbedBehaviour(transform, rb);
 
         //Se le suma 0.1 para que el rayo salga de la box lo minimo posible
         horizontalDetectionDist = bc.size.x * (transform.lossyScale.x / 2) + 0.1f;
@@ -82,6 +91,7 @@ public class Character : MonoBehaviour {
         
 	}
 
+    //Para que no haya diferencias entre la velocidad de movimiento durante el salto y sobre el salto
     private void ManageGravity()
     {
         if(IsTouching(Vector2.down))
@@ -187,7 +197,8 @@ public class Character : MonoBehaviour {
         return false;
     }
 
-    //EVENTOS
+
+    #region EVENTOS
 
     private void CheckOnFloor()
     {
@@ -266,6 +277,7 @@ public class Character : MonoBehaviour {
         }
     }
 
+    #endregion
 
     //Probando cosas
 

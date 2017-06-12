@@ -3,41 +3,37 @@ using UnityEngine;
 
 public class FadingPortal : PortalEntity {
 
-    PortalBehaviours portalBehaviours;
     Animator anim;
-    float radius = 2f;
-    int layer = 1 << 9;
-    bool active = false;
 
-    FadingPortal()
+    void Awake()
     {
-        portalBehaviours = new PortalBehaviours();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
         anim = GetComponent<Animator>();
-    }
-    void Update()
-    {
-        CheckArea();
-        if (anim!=null)
-            anim.SetBool("active", active);
-    }
-    void FixedUpdate()
-    {
-        portalBehaviours.RotationMove(rb, rotationSpeed);
+        active = true;
     }
 
-    void CheckArea()
+    void Update()
     {
-        active = Physics2D.OverlapCircle(transform.position, radius, layer);
+        CheckAbsorb();
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    void FixedUpdate()
     {
-        if (other.CompareTag("Player"))
+        pb.RotationMove(rb, rotationSpeed);
+
+        if (anim != null)
+            anim.SetBool("active", absorb);
+    }
+
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (active && obj.tag == "Player")
         {
-            other.SendMessage("AbsorbedByPortal", transform);
+            absorb = true;
         }
     }
 }
